@@ -5,14 +5,14 @@ Player::Player(float groundY) : groundY(groundY) {
     shape.setPosition(sf::Vector2f(100.f, groundY - shape.getSize().y));
 
     //velocity = sf::Vector2f(150.f, 0.f); // 预留横向速度
-    gravity = 900.f;
+    gravity = 1800.f;
 }
 void Player::update(float dt) {
     using Key = sf::Keyboard::Key;
     // Space 跳跃
     if (sf::Keyboard::isKeyPressed(Key::Space) &&
         shape.getPosition().y >= groundY - shape.getSize().y - 0.1f) {
-        velocity.y = -500.f;
+        velocity.y = -800.f;
     }
     // 重力
     velocity.y += gravity * dt;
