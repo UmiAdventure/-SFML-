@@ -1,4 +1,5 @@
 #include "Obstacle.h"
+#include <stdexcept>
 
 Obstacle::Obstacle(float groundY) : groundY(groundY) {  // Ä¬ÈÏÏò×óÒÆ¶¯
     shape.setSize(sf::Vector2f(40.f, 40.f));

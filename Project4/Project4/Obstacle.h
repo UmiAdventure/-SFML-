@@ -1,5 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Config.h"
+#include "Ground.h"
+#include <SFML/Graphics.hpp>
+#include <vector>
+#include <stdexcept>
 
 class Obstacle {
 public:
