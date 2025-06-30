@@ -2,21 +2,26 @@
 #include "Game.h"
 
 Start::Start():running(true), enterPressed(false),window(sf::VideoMode(sf::Vector2u(800u, 600u), 32), "Debug Adventure") {
-    if (!font.openFromFile("arial.ttf"))
+    if (titleFont.openFromFile("CHILLER.TTF"))
+    {
+        // error...
+    }
+    if (!startFont.openFromFile("CHILLER.TTF"))
     {
         // error...
     }
     // 设置开始游戏文本
-    sf::Text titleText(font);
-    sf::Text startText(font);
+    sf::Text titleText(titleFont);
+    sf::Text startText(startFont);
     titleText.setString("DEBUG ADVENTURE");
-    titleText.setCharacterSize(60);
+    titleText.setCharacterSize(120);
     titleText.setFillColor(sf::Color::White);
-    titleText.setPosition({ 100.f, 150.f });
+    titleText.setPosition({ 10.f, 150.f });
+    titleText.setStyle(sf::Text::Bold);
     startText.setString("Press Enter to start");
-    startText.setCharacterSize(40);
+    startText.setCharacterSize(60);
     startText.setFillColor(sf::Color::White);
-    startText.setPosition({ 200.f, 350.f });
+    startText.setPosition({ 220.f, 350.f });
     window.clear(sf::Color::Black);
     window.draw(titleText);
     window.draw(startText);

@@ -160,6 +160,7 @@ sfml-network.lib
   </ItemGroup>
   <ItemGroup>
     <Font Include="arial.ttf" />
+    <Font Include="C:\WINDOWS\Fonts\RAVIE.TTF" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="background.png" />

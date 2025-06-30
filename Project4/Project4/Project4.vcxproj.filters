@@ -58,6 +58,9 @@
     <Font Include="arial.ttf">
       <Filter>资源文件</Filter>
     </Font>
+    <Font Include="C:\WINDOWS\Fonts\RAVIE.TTF">
+      <Filter>资源文件</Filter>
+    </Font>
   </ItemGroup>
   <ItemGroup>
     <Image Include="background.png">

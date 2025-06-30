@@ -11,7 +11,8 @@ public:
 
 private:
     sf::RenderWindow window;
-    sf::Font font;
+    sf::Font startFont;
+    sf::Font titleFont;
     bool running;
     bool enterPressed;
     void processEvents();
