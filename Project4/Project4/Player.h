@@ -10,10 +10,17 @@
 class Player
 {
 public:
+    enum class PlayerState {
+        GROUNDED,
+        JUMPING
+    };
     Player(float startX, float startY);   // 位置由 Game 注入
     void  update(float dt);               // 每帧更新
     void  render(sf::RenderWindow& win) const;
+    PlayerState getState() const;
+    void update(float dt, const Ground& ground, PlayerState state);
 
+    
 private:
    // sf::Sprite         sprite;        // 用 sprite 替代 shape
    // sf::Texture        texture;       // 加载 player.png
@@ -24,6 +31,9 @@ private:
     sf::Vector2f       velocity;
     float              gravity;
     float              jumpImpulse;
+    float              jumpStrength = -500.f;
+    float              groundY;
+    PlayerState state;
 };
 
 

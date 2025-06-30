@@ -30,13 +30,14 @@ bool Start::checkEnterPressed() const {
 }
 
 void Start::update(float dt) { printf("1");
-    while (window.isOpen())
+    while (running)
     {
         while (const std::optional event = window.pollEvent())
         {
             if (checkEnterPressed()) {
                 Game game;
                 game.run();
+                running = false;
             }
         }
     }

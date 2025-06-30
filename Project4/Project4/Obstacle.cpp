@@ -9,7 +9,22 @@ Obstacle::Obstacle(float groundY) : groundY(groundY) {  // 默认向左移动
 }
 
 void Obstacle::update(float dt) {
-    shape.move(sf::Vector2f(-200.f * dt, 0.f));
+    
+}
+void Obstacle::update(float dt, const Ground& ground) {
+   shape.move(sf::Vector2f(-200.f * dt, 0.f));
+   //float totalTime += dt;
+   //for (auto& seg : shape) {
+   //    seg.move(sf::Vector2f(-speed * dt, 0.f));
+   //    // 超出左屏则移到最右侧
+   //    // 计算当前片段的X位置（用于相位偏移）
+       float xPos = shape.getPosition().x;
+
+
+    float terrainHeight = ground.getY() - 50.0f * std::sin(xPos * 0.01f + ground.getTotalTime() * 2.0f);
+    float groundLevel = terrainHeight - shape.getSize().y;  // 地面的Y坐标
+    //强制跟随地形
+    shape.setPosition(sf::Vector2f(xPos, groundLevel));
 }
 
 void Obstacle::render(sf::RenderWindow& window) const {

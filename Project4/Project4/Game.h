@@ -26,6 +26,7 @@ private:
     sf::RenderWindow window;
     Player          player;
     Ground          ground;
+    Player::PlayerState playerState;
     //O
 // bstacle        obstacle;
     std::vector<Obstacle> obstacles;  // 管理多个障碍物

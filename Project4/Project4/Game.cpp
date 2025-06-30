@@ -1,4 +1,5 @@
 ﻿#include "Game.h"
+#include"Player.h"
 #include <stdexcept>
 
 //Game::Game(sf::RenderWindow& win)
@@ -21,6 +22,7 @@ Game::Game() :
     //obstacle(200.f),
     state(State::Playing),
     spawnTimer(0.f),
+    playerState(Player::PlayerState::GROUNDED),
     nextSpawnTime(generateRandomTime()){  // 初始化随机生成时间
     window.setFramerateLimit(60);
     if (!backgroundTexture.loadFromFile("background.png")) {
@@ -78,12 +80,14 @@ void Game::processEvents() {
 
 
 void Game::update(float dt) {
-    player.update(dt);
+    //player.update(dt);
+    player.update(dt, ground, playerState);
+    playerState = player.getState();
     ground.update(dt);
 
     // 更新所有障碍物
     for (auto& obs : obstacles) {
-        obs.update(dt);
+        obs.update(dt,ground);
     }
 
     // 移除移出屏幕的障碍物
