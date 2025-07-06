@@ -143,7 +143,9 @@ sfml-network.lib
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Gamestate.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
@@ -152,8 +154,11 @@ sfml-network.lib
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="PlayState.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="PhysicasObject.h" />
     <ClInclude Include="Start.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />

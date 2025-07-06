@@ -1,5 +1,5 @@
 #include "Start.h"
-#include "Game.h"
+#include "PlayState.h"
 
 Start::Start():running(true), enterPressed(false),window(sf::VideoMode(sf::Vector2u(800u, 600u), 32), "Debug Adventure") {
     if (titleFont.openFromFile("CHILLER.TTF"))
@@ -40,7 +40,7 @@ void Start::update(float dt) { printf("1");
         while (const std::optional event = window.pollEvent())
         {
             if (checkEnterPressed()) {
-                Game game;
+                PlayState game;
                 game.run();
                 running = false;
             }

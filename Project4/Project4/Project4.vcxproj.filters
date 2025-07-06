@@ -13,45 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{77b6ba03-67f2-477e-b179-ac8afb455161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\entities">
+      <UniqueIdentifier>{b550b762-aed7-42ac-b380-908d9210b800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\states">
+      <UniqueIdentifier>{4277f19e-ce59-4f21-9137-ac0f5430b7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\core">
+      <UniqueIdentifier>{cbaef7a4-f294-4fec-a1a8-1b112725bad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\entities">
+      <UniqueIdentifier>{e1da938f-c72c-471b-8537-b210d44c39eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\states">
+      <UniqueIdentifier>{6aab5cf1-3605-40fb-8f78-9456af307953}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ground.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Start.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>源文件\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>源文件\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>源文件\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamestate.cpp">
+      <Filter>源文件\states</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>源文件\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ground.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Start.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicasObject.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>头文件\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>头文件\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>头文件\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>头文件\states</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
