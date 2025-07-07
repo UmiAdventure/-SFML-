@@ -17,7 +17,6 @@ void PauseState::processEvents() {
     const auto onKeyPressed = [this](const sf::Event::KeyPressed& keyPressed) {
         if (keyPressed.code == sf::Keyboard::Key::P) {
             printf("P IS PRESSED\n");
-            //onResume();
             shouldPop = true;
         }
         };
@@ -29,6 +28,7 @@ void PauseState::update(float) {
 }
 
 void PauseState::render() {
+    
     sf::Text titleText(font);
     sf::Text startText(font);
 
@@ -42,7 +42,7 @@ void PauseState::render() {
     startText.setFillColor(sf::Color::White);
     startText.setPosition({ 250.f, 300.f });
 
-    window.clear(sf::Color(0, 0, 0, 150)); // °ëÍ¸Ã÷±³¾°
+    window.clear(sf::Color::Black); 
     window.draw(titleText);
     window.draw(startText);
     window.display();

@@ -144,7 +144,11 @@ sfml-network.lib
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+<<<<<<< Updated upstream
     <ClCompile Include="Audio.cpp" />
+=======
+    <ClCompile Include="helpState.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -157,8 +161,12 @@ sfml-network.lib
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Collision.h" />
+=======
+    <ClInclude Include="helpState.h" />
+>>>>>>> Stashed changes
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="PlayState.h" />

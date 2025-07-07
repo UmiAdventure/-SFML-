@@ -7,7 +7,7 @@
 class PauseState : public GameState {
 public:
     PauseState(sf::RenderWindow& win, std::function<void()> resumeCallback);
-    bool shouldPop = false;
+        bool shouldPop = false;
 
     void processEvents() override;
     void update(float dt) override;

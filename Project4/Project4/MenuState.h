@@ -8,12 +8,11 @@ public:
     void processEvents() override;
     void update(float dt) override;
     void render() override;
-
+    bool isHelpPressed() const;
     bool isStartPressed() const;
 
 private:
-    sf::Font startFont;
-    sf::Font titleFont;
-
+    sf::Font font;
     bool startPressed = false;
+    bool helpPressed = false;
 };

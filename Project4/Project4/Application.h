@@ -1,6 +1,5 @@
-﻿//#pragma once
-
-#include <memory>
+﻿#include <memory>
+#include "HelpState.h" 
 #include <stack>
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
