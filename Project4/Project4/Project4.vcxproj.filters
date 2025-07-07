@@ -33,13 +33,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Start.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
@@ -60,11 +54,17 @@
     <ClCompile Include="PlayState.cpp">
       <Filter>源文件\states</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>源文件\states</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>源文件\states</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseState.cpp">
+      <Filter>源文件\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Start.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>头文件\core</Filter>
     </ClInclude>
@@ -80,10 +80,19 @@
     <ClInclude Include="Player.h">
       <Filter>头文件\entities</Filter>
     </ClInclude>
-    <ClInclude Include="PlayState.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="GameState.h">
+      <Filter>头文件\states</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>头文件\states</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>头文件\states</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>头文件\states</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseState.h">
       <Filter>头文件\states</Filter>
     </ClInclude>
   </ItemGroup>
