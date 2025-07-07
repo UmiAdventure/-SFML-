@@ -2,7 +2,6 @@
 #include "MenuState.h"
 #include "PlayState.h"
 #include "PauseState.h"
-#include "HelpState.h" // 新增帮助界面
 
 #include <memory>
 
@@ -29,32 +28,25 @@ void Application::run() {
         state->update(dt);
         state->render();
 
-        // ✅ PauseState 请求返回
+        // ✅ 检查当前状态是否是 PauseState，是否请求 pop
         if (auto pause = dynamic_cast<PauseState*>(state)) {
             if (pause->shouldPop) {
-                popState();
-                continue;
+                popState();  // 安全地在主循环中 pop
+                continue;    // 避免下面对已销毁状态的处理
             }
         }
 
-        // ✅ HelpState 请求返回
-        if (auto help = dynamic_cast<HelpState*>(state)) {
-            if (help->shouldReturn) {
-                popState();
-                continue;
-            }
-        }
-
-        // ✅ MenuState 处理开始游戏 / 进入帮助
+        // ✅ 处理菜单状态：点击开始则进入 PlayState，并能触发 PauseState
         if (auto menu = dynamic_cast<MenuState*>(state)) {
             if (menu->isStartPressed()) {
-                popState();  // 关闭菜单
+                popState();  // 弹出菜单
 
                 auto play = std::make_unique<PlayState>(window, [this]() {
-                    // 触发暂停时，压入 PauseState
+                    // 当 PlayState 请求暂停，压入 PauseState
                     this->pushState(std::make_unique<PauseState>(
                         window,
                         [this]() {
+                            // ✅ 不立即 pop，而是设置标志，在下一帧处理
                             if (auto* top = dynamic_cast<PauseState*>(this->currentState())) {
                                 top->shouldPop = true;
                             }
@@ -63,12 +55,7 @@ void Application::run() {
                     });
 
                 pushState(std::move(play));
-                continue;
-            }
-
-            if (menu->isHelpPressed()) {
-                pushState(std::make_unique<HelpState>(window));
-                continue;
+                continue;  // 避免继续处理旧状态
             }
         }
     }

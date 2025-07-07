@@ -63,13 +63,8 @@
     <ClCompile Include="PauseState.cpp">
       <Filter>源文件\states</Filter>
     </ClCompile>
-<<<<<<< Updated upstream
     <ClCompile Include="Audio.cpp">
       <Filter>源文件\core</Filter>
-=======
-    <ClCompile Include="helpState.cpp">
-      <Filter>源文件\states</Filter>
->>>>>>> Stashed changes
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,16 +98,11 @@
     <ClInclude Include="PauseState.h">
       <Filter>头文件\states</Filter>
     </ClInclude>
-<<<<<<< Updated upstream
     <ClInclude Include="Audio.h">
       <Filter>头文件\core</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>头文件\core</Filter>
-=======
-    <ClInclude Include="helpState.h">
-      <Filter>头文件\states</Filter>
->>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
