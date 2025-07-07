@@ -19,7 +19,8 @@ public:
     void  render(sf::RenderWindow& win) const;
     PlayerState getState() const;
     void update(float dt, const Ground& ground, PlayerState state);
-
+    // --- 新增：返回全局碰撞框 ---
+    sf::FloatRect getBounds() const { return shape.getGlobalBounds(); }
     
 private:
    

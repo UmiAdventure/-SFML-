@@ -63,6 +63,9 @@
     <ClCompile Include="PauseState.cpp">
       <Filter>源文件\states</Filter>
     </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -95,6 +98,12 @@
     <ClInclude Include="PauseState.h">
       <Filter>头文件\states</Filter>
     </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="arial.ttf">
@@ -116,5 +125,16 @@
     <None Include="Config.h">
       <Filter>头文件</Filter>
     </None>
+    <None Include="bgm.ogg">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="hit.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="jump.wav">
+      <Filter>资源文件</Filter>
+    </Media>
   </ItemGroup>
 </Project>

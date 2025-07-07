@@ -65,7 +65,18 @@
 #include "PlayState.h"
 #include <algorithm>
 #include <stdexcept>
+#include "Audio.h"
+#include "Collision.h"    // ⭐ 添加碰撞检测头文件
 #include <SFML/Window/Keyboard.hpp>
+
+namespace {
+    Audio jumpSfx;
+    Audio hitSfx;
+    MusicPlayer bgm;      // ⭐ BGM播放对象
+    bool sfxLoaded = false;  // 避免重复加载音频
+    sf::Clock sfxclock;
+}
+
 
 PlayState::PlayState(sf::RenderWindow& win, std::function<void()> pauseCallback)
     : player(100.f, 300.f),
@@ -79,6 +90,14 @@ PlayState::PlayState(sf::RenderWindow& win, std::function<void()> pauseCallback)
     if (!backgroundTexture.loadFromFile("background.png")) {
         throw std::runtime_error("Failed to load background.png");
     }
+    if (!sfxLoaded) {
+        jumpSfx.load("jump.wav");     // ⭐ 加载跳跃音效
+        hitSfx.load("hit.wav");       // ⭐ 加载碰撞音效
+        bgm.load("bgm.ogg");          // ⭐ 加载背景音乐
+        bgm.play();                   // ⭐ 播放背景音乐
+        sfxLoaded = true;             // 标记已加载
+    }
+
     window->setFramerateLimit(60);
 }
 
@@ -133,6 +152,21 @@ void PlayState::update(float dt) {
         nextSpawnTime = generateRandomTime();
         obstacles.emplace_back(200.f);  // 添加障碍物
     }
+
+    for (const auto& obs : obstacles) {
+        if (Collision::checkPlayerObstacleCollision(player, obs)) {
+            if (!hitSfx.isPlaying()) {
+                std::cout << "[音效] 播放碰撞音效 hit.wav at time = " << sfxclock.getElapsedTime().asSeconds() << "s\n";
+                hitSfx.play();
+            }
+               // hitSfx.play();  // ⭐ 播放碰撞音效
+            window->setTitle("Hit!");                 // ⭐ 临时标题提示
+        }
+    }
+    if (player.getState() == Player::PlayerState::JUMPING && !jumpSfx.isPlaying()) {
+        std::cout << "[音效] 播放跳跃音效 jump.wav at time = " << sfxclock.getElapsedTime().asSeconds() << "s\n";
+		jumpSfx.play();  // ⭐ 播放跳跃音效
+	}
 }
 
 void PlayState::render() {

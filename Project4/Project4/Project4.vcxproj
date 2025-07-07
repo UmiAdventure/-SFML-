@@ -144,6 +144,7 @@ sfml-network.lib
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -156,6 +157,8 @@ sfml-network.lib
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="PlayState.h" />
@@ -175,7 +178,12 @@ sfml-network.lib
     <Image Include="player.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bgm.ogg" />
     <None Include="Config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="hit.wav" />
+    <Media Include="jump.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
